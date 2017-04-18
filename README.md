@@ -71,16 +71,19 @@ Being able to write SQL queries is an important skill, but being able to design 
 
 It is recommended that you complete these specs in order. The LeetCode exercises build on the **SQL Foundations** exercises.
 
+### DAY 1-2 
 **SQL Foundations**
 - [ ] [SQLBolt](https://sqlbolt.com/) exercises completed
   - [ ] Solutions added to artifact repo
 - [ ] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
   - [ ] Solutions added to artifact repo
 
+### DAY 2-3
 **SQL Foundations Practice Exercises**
 - [ ] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
   - [ ] Solutions added to artifact repo
 
+### DAY 4-5
 **Exercises to Reinforce Conceptual Knowledge**
 - [ ] 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank completed
   - [ ] Solutions added to artifact repo
@@ -88,9 +91,9 @@ It is recommended that you complete these specs in order. The LeetCode exercises
   - [ ] Solutions added to artifact repo
 
 **Other**
-- [ ] SQL files are well formatted and readable.
-- [ ] All the SQL keywords are capitalized.
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT)
+- [x] SQL files are well formatted and readable.
+- [x] All the SQL keywords are capitalized.
+- [x] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT)
 
 ### Stretch
 
