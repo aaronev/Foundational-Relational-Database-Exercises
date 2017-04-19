@@ -73,10 +73,10 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 
 ### DAY 1-2 
 **SQL Foundations**
-- [ ] [SQLBolt](https://sqlbolt.com/) exercises completed
-  - [ ] Solutions added to artifact repo
-- [ ] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
-  - [ ] Solutions added to artifact repo
+- [x] [SQLBolt](https://sqlbolt.com/) exercises completed
+  - [x] Solutions added to artifact repo
+- [x] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
+  - [x] Solutions added to artifact repo
 
 ### DAY 2-3
 **SQL Foundations Practice Exercises**
@@ -97,8 +97,8 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 
 ### Stretch
 
-- [ ] Exercises under the "Assessments: More involved examples for confident users" subtopic on [SQLZOO](http://sqlzoo.net/) completed
-  - [ ] Solutions added to artifact repo
+- [x] Exercises under the "Assessments: More involved examples for confident users" subtopic on [SQLZOO](http://sqlzoo.net/) completed
+  - [x] Solutions added to artifact repo
 - [ ] Actual database and web API created with PostgreSQL and Node.js
   - [ ] Follow [this tutorial](http://mherman.org/blog/2016/03/13/designing-a-restful-api-with-node-and-postgres/#.WAqKX5MrKRt) (thanks @nodatall!)
   - [ ] `GET /api/puppies` Returns ALL puppies

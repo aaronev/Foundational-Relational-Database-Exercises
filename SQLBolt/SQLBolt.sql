@@ -78,14 +78,14 @@
 
 -- Lesson 13
 
-  INSERT INTO movies VALUES (4, "Toy Story 4", "Jonhn Lasseter", 2000, 90)
-  INSERT INTO boxoffice VALUES (4, 8.7, 340, 270)
+  INSERT INTO movies VALUES (4, "Toy Story 4", "Jonhn Lasseter", 2000, 90);
+  INSERT INTO boxoffice VALUES (4, 8.7, 340, 270);
 
 -- Lesson 14
 
-  UPDATE movies SET director = 'John Lasseter' WHERE id = 2;
+  UPDATE movies SET director = "John Lasseter" WHERE id = 2;
   UPDATE movies SET year = 1999 WHERE id = 3;
-  UPDATE movies SET title = 'Toy Story 3', director = 'Lee Unkrich' WHERE id = 11;
+  UPDATE movies SET title = "Toy Story 3", director = "Lee Unkrich" WHERE id = 11;
 
 -- Lesson 15
 
@@ -102,40 +102,10 @@
 
 -- Lesson 17
 
-  ALTER TABLE movies ADD aspect_ratio FLOAT
-  ALTER TABLE movies ADD language TEXT DEFAULT English
+  ALTER TABLE movies ADD aspect_ratio FLOAT;
+  ALTER TABLE movies ADD language TEXT DEFAULT English;
 
 -- Lesson 18
 
   DROP TABLE IF EXISTS movies;
   DROP TABLE IF EXISTS boxoffice;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
