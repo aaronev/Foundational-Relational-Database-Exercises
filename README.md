@@ -71,11 +71,11 @@ Being able to write SQL queries is an important skill, but being able to design 
 
 It is recommended that you complete these specs in order. The LeetCode exercises build on the **SQL Foundations** exercises.
 
-### DAY 1-2 
+### DAY 1-2
 **SQL Foundations**
-- [ ] [SQLBolt](https://sqlbolt.com/) exercises completed
-  - [ ] Solutions added to artifact repo
-- [ ] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
+- [x] [SQLBolt](https://sqlbolt.com/) exercises completed
+  - [x] Solutions added to artifact repo
+- [x] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
   - [ ] Solutions added to artifact repo
 
 ### DAY 2-3
