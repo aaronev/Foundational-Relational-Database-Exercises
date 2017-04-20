@@ -19,7 +19,6 @@ SELECT name FROM world WHERE name LIKE '_t%'ORDER BY name
 SELECT name FROM world WHERE name LIKE '%o__o%'
 SELECT name FROM world WHERE LENGTH(name) = 4
 SELECT name FROM world WHERE name = capital
-SELECT name FROM world WHERE name = capital
 SELECT name FROM world WHERE concat(name, ' ', 'city') = capital
 SELECT capital, name FROM world WHERE capital LIKE concat('%', name, '%')
 SELECT name, capital FROM world WHERE capital <> name AND capital LIKE concat(name,'%')
@@ -198,7 +197,3 @@ CREATE TABLE registration (
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
-
-
-
-
