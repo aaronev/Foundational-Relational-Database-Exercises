@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+--SQLZOO.net/wiki
+
+
+
+=======
 -- http://sqlzoo.net/wiki/
+>>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 
 --SELECT basics
 
@@ -7,7 +14,10 @@ SELECT name, population FROM world WHERE name IN ('Sweden', 'Norway', 'Denmark')
 SELECT name, area FROM world WHERE area BETWEEN 200000 AND 250000
 
 --SELECT name
+<<<<<<< HEAD
+=======
 
+>>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 SELECT name FROM world WHERE name LIKE 'y%'
 SELECT name FROM world WHERE name LIKE '%y'
 SELECT name FROM world WHERE name LIKE '%x%'
@@ -19,7 +29,11 @@ SELECT name FROM world WHERE name LIKE '_t%'ORDER BY name
 SELECT name FROM world WHERE name LIKE '%o__o%'
 SELECT name FROM world WHERE LENGTH(name) = 4
 SELECT name FROM world WHERE name = capital
+<<<<<<< HEAD
+SELECT  name FROM world WHERE concat(name, ' ', 'city') = capital
+=======
 SELECT name FROM world WHERE concat(name, ' ', 'city') = capital
+>>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 SELECT capital, name FROM world WHERE capital LIKE concat('%', name, '%')
 SELECT name, capital FROM world WHERE capital <> name AND capital LIKE concat(name,'%')
 
@@ -63,6 +77,9 @@ SELECT name FROM world WHERE population > (SELECT population FROM world WHERE na
 SELECT name FROM world WHERE continent = 'europe' AND gdp/population >( SELECT gdp/population FROM world WHERE name = 'United Kingdom')
 SELECT name, continent FROM world WHERE continent = (SELECT continent FROM world WHERE name = 'argentina') OR continent = (SELECT continent FROM world WHERE name = 'australia') ORDER BY name ASC
 SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name = 'canada') AND population < (SELECT population FROM world WHERE name = 'poland')
+<<<<<<< HEAD
+SELECT name, concat(ROUND(population/ (SELECT population FROM world WHERE name = 'Germany') * 100), '%' )FROM world WHERE continent = 'europe'
+=======
 SELECT name, concat(ROUND(population/(SELECT population FROM world WHERE name = 'Germany') * 100), '%' )FROM world WHERE continent = 'europe'
 SELECT name From world WHERE gdp > (SELECT MAX(gdp) FROM world WHERE continent = 'europe')
 SELECT continent, name, area FROM world WHERE area IN (SELECT MAX(area) FROM world GROUP BY continent)
@@ -178,3 +195,4 @@ CREATE TABLE registration (
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
+>>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
