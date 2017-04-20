@@ -75,17 +75,17 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 **SQL Foundations**
 - [x] [SQLBolt](https://sqlbolt.com/) exercises completed
   - [x] Solutions added to artifact repo
-<<<<<<< HEAD
 - [x] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
-  - [ ] Solutions added to artifact repo
-=======
-- [ ] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
   - [x] Solutions added to artifact repo
->>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 
 ### DAY 2-3
 **SQL Foundations Practice Exercises**
-- [ ] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
+- [x] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
+  - [x] Solutions added to artifact repo
+
+### DAY 2-3
+**SQL Foundations Practice Exercises**
+- [x] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
   - [x] Solutions added to artifact repo
 
 ### DAY 4-5
