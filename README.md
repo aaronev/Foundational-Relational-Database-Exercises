@@ -80,7 +80,6 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 
 ### DAY 2-3
 **SQL Foundations Practice Exercises**
-
 - [x] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
   - [x] Solutions added to artifact repo
 
