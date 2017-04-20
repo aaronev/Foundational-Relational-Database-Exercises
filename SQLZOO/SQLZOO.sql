@@ -1,11 +1,4 @@
-<<<<<<< HEAD
---SQLZOO.net/wiki
-
-
-
-=======
 -- http://sqlzoo.net/wiki/
->>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 
 --SELECT basics
 
@@ -14,10 +7,7 @@ SELECT name, population FROM world WHERE name IN ('Sweden', 'Norway', 'Denmark')
 SELECT name, area FROM world WHERE area BETWEEN 200000 AND 250000
 
 --SELECT name
-<<<<<<< HEAD
-=======
 
->>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 SELECT name FROM world WHERE name LIKE 'y%'
 SELECT name FROM world WHERE name LIKE '%y'
 SELECT name FROM world WHERE name LIKE '%x%'
@@ -29,13 +19,10 @@ SELECT name FROM world WHERE name LIKE '_t%'ORDER BY name
 SELECT name FROM world WHERE name LIKE '%o__o%'
 SELECT name FROM world WHERE LENGTH(name) = 4
 SELECT name FROM world WHERE name = capital
-<<<<<<< HEAD
-SELECT  name FROM world WHERE concat(name, ' ', 'city') = capital
-=======
 SELECT name FROM world WHERE concat(name, ' ', 'city') = capital
->>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
 SELECT capital, name FROM world WHERE capital LIKE concat('%', name, '%')
 SELECT name, capital FROM world WHERE capital <> name AND capital LIKE concat(name,'%')
+SELECT name, RIGHT(capital, LENGTH(capital) - LENGTH(name)) FROM world WHERE capital like concat(name, "%") and  name <> capital
 
 --SELECT from world
 
@@ -66,9 +53,8 @@ SELECT * FROM nobel WHERE yr = 1980 AND subject = 'Physics'  OR yr = 1984 AND su
 SELECT * FROM nobel WHERE yr = 1980 AND subject NOT IN ('Chemistry', 'Medicine')
 SELECT * FROM nobel WHERE yr < 1910 AND subject = 'Medicine' OR subject = 'Literature' AND yr >= 2004
 SELECT * FROM nobel WHERE winner LIKE 'PETER GRÜNBERG'
-SELECT * FROM nobel WHERE winner LIKE 'EUGENE O''NEILL'
+SELECT * FROM nobel WHERE winner LIKE "EUGENE O'NEILL"
 SELECT winner, yr, subject FROM nobel WHERE winner LIKE 'Sir%'  ORDER BY yr DESC
-SELECT winner, subject
 SELECT winner, subject FROM nobel WHERE yr=1984 ORDER BY subject IN ('Physics','Chemistry'), subject, winner
 
 --SELECT within SELECT tutorial
@@ -77,13 +63,23 @@ SELECT name FROM world WHERE population > (SELECT population FROM world WHERE na
 SELECT name FROM world WHERE continent = 'europe' AND gdp/population >( SELECT gdp/population FROM world WHERE name = 'United Kingdom')
 SELECT name, continent FROM world WHERE continent = (SELECT continent FROM world WHERE name = 'argentina') OR continent = (SELECT continent FROM world WHERE name = 'australia') ORDER BY name ASC
 SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name = 'canada') AND population < (SELECT population FROM world WHERE name = 'poland')
-<<<<<<< HEAD
-SELECT name, concat(ROUND(population/ (SELECT population FROM world WHERE name = 'Germany') * 100), '%' )FROM world WHERE continent = 'europe'
-=======
 SELECT name, concat(ROUND(population/(SELECT population FROM world WHERE name = 'Germany') * 100), '%' )FROM world WHERE continent = 'europe'
 SELECT name From world WHERE gdp > (SELECT MAX(gdp) FROM world WHERE continent = 'europe')
 SELECT continent, name, area FROM world WHERE area IN (SELECT MAX(area) FROM world GROUP BY continent)
---SKIPPED 8 SELECT continent, name FROM world GROUP BY continent, name [(SELECT DISTINCT continent FROM world)] only selects continents
+SELECT continent, name FROM world x WHERE name <= ALL (SELECT name FROM world y WHERE x.continent = y.continent)
+SELECT name, continent, population FROM world WHERE continent IN (SELECT continent FROM world x WHERE 25000000 >= (SELECT MAX(population) FROM world y WHERE x.continent = y.continent))
+SELECT name, continent FROM world x WHERE population > ALL(SELECT population * 3 FROM world y WHERE x.continent = y.continent AND population > 0 AND y.name != x.name)
+
+-- SUM and COUNT
+
+SELECT SUM(population) FROM world
+SELECT DISTINCT continent FROM world
+SELECT SUM(gdp) FROM world WHERE continent = 'africa' GROUP BY continent
+SELECT COUNT(name) FROM world WHERE area >= 1000000
+SELECT SUM(population) FROM world WHERE name IN ('Estonia', 'Latvia', 'Lithuania')
+SELECT continent, COUNT(name) FROM world GROUP BY continent
+SELECT continent, COUNT(name) FROM world WHERE population >= 10000000 GROUP BY continent
+SELECT continent FROM world GROUP BY continent HAVING SUM(population) >= 100000000
 
 --The JOIN operation
 
@@ -94,6 +90,12 @@ SELECT team1, team2, player FROM game JOIN goal ON game.id = goal.matchid WHERE 
 SELECT player, teamid, coach, gtime FROM goal JOIN eteam on goal.teamid = eteam.id WHERE gtime <= 10
 SELECT mdate, teamname FROM game JOIN eteam ON  game.team1 = eteam.id where coach = 'Fernando Santos'
 SELECT player FROM goal JOIN game ON goal.matchid = game.id WHERE stadium = 'National Stadium, Warsaw'
+SELECT DISTINCT player FROM game JOIN goal ON goal.matchid = game.id WHERE(team1 = 'GER' OR team2 = 'GER') AND teamid <> 'GER'
+SELECT teamname, COUNT(teamid) FROM eteam JOIN goal ON id = teamid GROUP BY teamname
+SELECT stadium, COUNT(teamid) FROM goal JOIN game ON goal.matchid = game.id GROUP BY stadium
+SELECT matchid,mdate, COUNT(teamid) FROM game JOIN goal ON matchid = id WHERE (team1 = 'POL' OR team2 = 'POL') GROUP BY matchid, mdate
+SELECT matchid, mdate, COUNT(teamid) FROM game JOIN goal ON goal.matchid = game.id WHERE(team1 = 'GER' OR team2 = 'GER') AND teamid = 'GER' GROUP BY matchid, mdate
+SELECT mdate, team1, SUM(CASE WHEN teamid = team1 THEN 1 ELSE 0 END) score1, team2, SUM(CASE WHEN teamid = team2 THEN 1 ELSE 0 END) score2 FROM game LEFT JOIN goal ON goal.matchid = game.id GROUP BY id, mdate, matchid, team1, team2
 
 --More JOIN operations
 
@@ -106,7 +108,9 @@ SELECT name FROM actor JOIN casting ON actor.id = casting.actorid WHERE movieid 
 SELECT name FROM actor JOIN casting ON actor.id = casting.actorid JOIN movie ON movie.id = casting.movieid WHERE title = "Alien" 
 SELECT title FROM movie JOIN casting ON movie.id = casting.movieid JOIN actor ON actor.id = casting.actorid WHERE name = 'Harrison Ford'
 SELECT title FROM movie JOIN casting ON movie.id = casting.movieid JOIN actor ON actor.id = casting.actorid WHERE ord <> 1 AND name = 'harrison ford'
-SELECT title, name FROM actor JOIN casting ON actor.id = casting.actorid JOIN movie ON movie.id =casting.movieid WHERE yr = 1962 and ord = 1
+SELECT title, name FROM actor JOIN casting ON actor.id = casting.actorid JOIN movie ON movie.id =casting.movieid WHERE yr = 1962 AND ord = 1
+SELECT yr,COUNT(title) FROM movie JOIN casting ON movie.id=movieid JOIN actor ON actorid=actor.id WHERE name='John Travolta' GROUP BY yr HAVING COUNT(title)=(SELECT MAX(c) FROM (SELECT yr,COUNT(title) AS c FROM movie JOIN casting ON movie.id=movieid JOIN actor ON actorid=actor.id WHERE name='John Travolta' GROUP BY yr) AS t)
+--Skipped Optional
 
 --Using NULL
 
@@ -128,9 +132,7 @@ SELECT institution, subject FROM nss WHERE question = 'Q15' AND score >= 100
 SELECT institution, score FROM nss WHERE question = 'Q15' AND subject = '(8) Computer Science' AND score < 50
 SELECT subject, SUM(response) FROM nss WHERE question='Q22' AND subject in ('(8) Computer Science', '(H) Creative Arts and Design') GROUP BY subject
 SELECT subject , SUM(response * a_strongly_agree)/100 FROM nss WHERE question = 'Q22' AND subject IN ('(8) Computer Science', '(H) Creative Arts and Design') GROUP BY subject
--- SKIPPED 6 SELECT subject , ROUND(SUM(response)/SUM(a_strongly_agree)) FROM nsd WHERE question = 'Q22' AND subject IN ('(8) Computer Science', '(H) Creative Arts and Design') GROUP BY subject
--- SKIPPED 7 SELECT institution, SUM(score) FROM nss WHERE question = 'Q22'  AND institution LIKE "%manchester%" GROUP BY institution
--- SKIPPED 8
+--Skipped Optional
 
 --SELF JOIN
 
@@ -142,7 +144,7 @@ SELECT a.company, a.num, a.stop, b.stop FROM route a JOIN route b ON a.company =
 SELECT a.company, a.num, stopa.name, stopb.name FROM route a JOIN route b ON a.company = b.company AND a.num = b.num JOIN stops stopa ON a.stop = stopa.id JOIN stops stopb ON b.stop = stopb.id WHERE stopa.name = 'Craiglockhart' AND stopb.name = 'London Road'
 SELECT DISTINCT a.company, a.num FROM route a JOIN route b ON a.company = b.company AND a.num = b.num JOIN stops stopa ON a.stop = stopa.id JOIN stops stopb ON b.stop=stopb.id WHERE stopa.name = 'Haymarket' AND stopb.name = 'Leith'
 SELECT DISTINCT a.company, a.num FROM route a JOIN route b ON a.company=b.company AND a.num=b.num JOIN stops stopa ON a.stop=stopa.id JOIN stops stopb ON b.stop = stopb.id WHERE stopa.name = 'Craiglockhart' AND stopb.name = 'Tollcross'
--- SKIPPED 9 AND 10
+--Skipped Optional
 
 --DDL Student Records
 
@@ -195,4 +197,3 @@ CREATE TABLE registration (
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
 INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
->>>>>>> bd0a692fc70956d955740679dc3ae7978682d8fc
