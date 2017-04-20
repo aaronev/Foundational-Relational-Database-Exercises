@@ -83,11 +83,6 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 - [x] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
   - [x] Solutions added to artifact repo
 
-### DAY 2-3
-**SQL Foundations Practice Exercises**
-- [x] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
-  - [x] Solutions added to artifact repo
-
 ### DAY 4-5
 **Exercises to Reinforce Conceptual Knowledge**
 - [x] 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank completed
