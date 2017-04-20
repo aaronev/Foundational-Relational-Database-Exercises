@@ -19,7 +19,6 @@ SELECT name FROM world WHERE name LIKE '_t%'ORDER BY name
 SELECT name FROM world WHERE name LIKE '%o__o%'
 SELECT name FROM world WHERE LENGTH(name) = 4
 SELECT name FROM world WHERE name = capital
---STRETCH GOALS:
 SELECT name FROM world WHERE concat(name, ' ', 'city') = capital
 SELECT capital, name FROM world WHERE capital LIKE concat('%', name, '%')
 SELECT name, capital FROM world WHERE capital <> name AND capital LIKE concat(name,'%')
@@ -52,7 +51,6 @@ SELECT winner FROM nobel WHERE winner LIKE 'John%'
 SELECT * FROM nobel WHERE yr = 1980 AND subject = 'Physics'  OR yr = 1984 AND subject = 'Chemistry'
 SELECT * FROM nobel WHERE yr = 1980 AND subject NOT IN ('Chemistry', 'Medicine')
 SELECT * FROM nobel WHERE yr < 1910 AND subject = 'Medicine' OR subject = 'Literature' AND yr >= 2004
--->STRETCH GOALS:
 SELECT * FROM nobel WHERE winner LIKE 'PETER GRÜNBERG'
 SELECT * FROM nobel WHERE winner LIKE 'EUGENE O''NEILL'
 SELECT winner, yr, subject FROM nobel WHERE winner LIKE 'Sir%'  ORDER BY yr DESC

@@ -81,7 +81,7 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 ### DAY 2-3
 **SQL Foundations Practice Exercises**
 - [ ] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
-  - [ ] Solutions added to artifact repo
+  - [x] Solutions added to artifact repo
 
 ### DAY 4-5
 **Exercises to Reinforce Conceptual Knowledge**
@@ -97,8 +97,8 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 
 ### Stretch
 
-- [x] Exercises under the "Assessments: More involved examples for confident users" subtopic on [SQLZOO](http://sqlzoo.net/) completed
-  - [x] Solutions added to artifact repo
+- [ ] Exercises under the "Assessments: More involved examples for confident users" subtopic on [SQLZOO](http://sqlzoo.net/) completed
+  - [ ] Solutions added to artifact repo
 - [ ] Actual database and web API created with PostgreSQL and Node.js
   - [ ] Follow [this tutorial](http://mherman.org/blog/2016/03/13/designing-a-restful-api-with-node-and-postgres/#.WAqKX5MrKRt) (thanks @nodatall!)
   - [ ] `GET /api/puppies` Returns ALL puppies
