@@ -73,22 +73,22 @@ It is recommended that you complete these specs in order. The LeetCode exercises
 
 ### DAY 1-2 
 **SQL Foundations**
-- [ ] [SQLBolt](https://sqlbolt.com/) exercises completed
-  - [ ] Solutions added to artifact repo
+- [x] [SQLBolt](https://sqlbolt.com/) exercises completed
+  - [x] Solutions added to artifact repo
 - [ ] Exercises in "Tutorials: Learn SQL in stages" section on [SQLZOO](http://sqlzoo.net/) completed
-  - [ ] Solutions added to artifact repo
+  - [x] Solutions added to artifact repo
 
 ### DAY 2-3
 **SQL Foundations Practice Exercises**
 - [ ] 10 TOTAL "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode completed
-  - [ ] Solutions added to artifact repo
+  - [x] Solutions added to artifact repo
 
 ### DAY 4-5
 **Exercises to Reinforce Conceptual Knowledge**
-- [ ] 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank completed
-  - [ ] Solutions added to artifact repo
-- [ ] 5 [Database Normalization challenges](https://www.hackerrank.com/domains/databases/database-normalization/difficulty/all/page/1) on HackerRank completed
-  - [ ] Solutions added to artifact repo
+- [x] 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank completed
+  - [x] Solutions added to artifact repo
+- [x] 5 [Database Normalization challenges](https://www.hackerrank.com/domains/databases/database-normalization/difficulty/all/page/1) on HackerRank completed
+  - [x] Solutions added to artifact repo
 
 **Other**
 - [x] SQL files are well formatted and readable.
