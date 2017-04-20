@@ -1,4 +1,5 @@
 --DDL General Election
+
 DROP TABLE IF EXISTS ge;
 CREATE TABLE ge(
   ons_id VARCHAR(10),
