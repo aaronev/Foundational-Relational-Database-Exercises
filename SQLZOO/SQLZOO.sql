@@ -194,6 +194,10 @@ CREATE TABLE registration (
 
 --ADD data
 
-INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
-INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
-INSERT INTO registration VALUES('HUF07101', 'Herbology', 07)
+INSERT INTO registration VALUES ('40001010','SLY07102',90);
+INSERT INTO registration VALUES ('40001010','HUF07101',40);
+INSERT INTO registration VALUES ('40001010','HUF08102',null);
+INSERT INTO registration VALUES ('40001011','SLY07102',99);
+INSERT INTO registration VALUES ('40001011','HUF08102',null);
+INSERT INTO registration VALUES ('40001012','SLY07102',20);
+INSERT INTO registration VALUES ('40001012','HUF07101',20);
