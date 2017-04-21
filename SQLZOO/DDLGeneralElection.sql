@@ -22,5 +22,4 @@ CREATE TABLE ge(
   PRIMARY KEY(ons_id,firstname,surname)
 );
 
-
 LOAD DATA INFILE '/tmp/hocl-ge2015-results-full.csv' INTO TABLE ge COLUMNS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
