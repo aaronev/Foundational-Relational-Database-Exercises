@@ -50,5 +50,22 @@ SELECT dep.Name AS Department, emp.Name AS Employee, emp.Salary FROM Department 
 Employee emp WHERE emp.DepartmentId=dep.Id AND 
 (SELECT COUNT(DISTINCT Salary) FROM Employee WHERE DepartmentId=dep.Id AND Salary>emp.Salary)<3
 
+--181 Employees Earning More Than Their Managers
 
---NOTE: some specs are unclear it requires knowledge that were not covered such as CREATE FUNCTION
+SELECT 	e1.Name AS Employee
+FROM 	Employee e1, Employee e2
+WHERE 	e1.ManagerId = e2.Id AND e1.Salary > e2.Salary
+
+--262 Trips and Users
+
+SELECT Request_at as Day,
+       ROUND(COUNT(IF(Status != 'completed', TRUE, NULL)) / COUNT(*), 2) AS 'Cancellation Rate'
+FROM Trips
+WHERE (Request_at BETWEEN '2013-10-01' AND '2013-10-03')
+      AND Client_id NOT IN (SELECT Users_Id FROM Users WHERE Banned = 'Yes')
+GROUP BY Request_at;
+
+--196. Delete Duplicate Emails
+
+DELETE FROM Person WHERE id NOT IN (SELECT t.id FROM (SELECT MIN(id) AS id FROM Person GROUP BY email) t)
+
